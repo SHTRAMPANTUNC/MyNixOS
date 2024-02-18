@@ -1,0 +1,8 @@
+{ ... }:
+{
+  hardware = {
+    bluetooth = {
+      enable = false;
+    };
+  };
+}
