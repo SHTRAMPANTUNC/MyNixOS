@@ -6,6 +6,7 @@
     ./vpn
     ./boot
     ./games
+    ./other
     ./services
   ];
 }

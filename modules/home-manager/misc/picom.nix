@@ -1,4 +1,8 @@
-{ colors, pkgs, nixpkgs-f2k, ... }:
+{ colors
+, pkgs
+, ...
+}:
+
 {
   services.picom = {
     enable = true;

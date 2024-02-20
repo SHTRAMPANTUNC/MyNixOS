@@ -1,4 +1,9 @@
-{ inputs, pkgs, config, ... }@vars:
+{ inputs
+, pkgs
+, config
+, user
+, ...
+}@vars:
 
 {
   imports = [
@@ -14,7 +19,7 @@
       nixosArgs = vars;
     };
     users = {
-      kuper = import ./home-manager;
+      ${user} = import ./home-manager;
     };
   };
 }

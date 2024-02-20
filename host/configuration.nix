@@ -1,4 +1,11 @@
-{ pkgs, root, inputs,... }: {
+{ pkgs
+, root
+, inputs
+, user
+, ...
+}: 
+
+{
 
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -10,6 +17,7 @@
     };
   };
 
+  # IDK where to put this
   nixpkgs.overlays = [
     inputs.neovim-nightly-overlay.overlay
   ];
@@ -21,13 +29,9 @@
     VISUAL = "nvim";
   };
 
-  environment.systemPackages = with pkgs; [
-    spotify
-  ];
-
   users = {
     users = {
-      kuper = {
+      ${user} = {
         hashedPasswordFile = "${root}/secrets/passwd.nix";
         isNormalUser = true;
         shell = pkgs.fish;

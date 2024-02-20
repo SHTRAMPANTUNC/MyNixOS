@@ -1,4 +1,7 @@
-{ pkgs, gitsignbydefault, ... }: {
+{ pkgs
+, gitsignbydefault
+, ...
+}: {
 
   programs.gh = {
     enable = true;
@@ -13,7 +16,7 @@
     userEmail = "youngtuctim@gmail.com";
     aliases = {
       fpush = "push --force-with-lease";
-      gaa = "git add --all";
+      aa = "add --all";
       cm = "commit -m";
       co = "checkout";
       br = "branch";
@@ -22,8 +25,18 @@
       unadd = "reset";
     };
     extraConfig = {
-      init.defaultbranch = "main";
-      branch.sort = "-committerdate";
+      init = {
+        defaultbranch = "main";
+      };
+      branch = {
+        sort = "-committerdate";
+      };
+      pull = {
+        rebase = true;
+      };
+      push = {
+        default = "simple";
+      };
     };
     ignores = [
       # c commons

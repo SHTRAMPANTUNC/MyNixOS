@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }: {
+{ pkgs
+, inputs
+, ...
+}: 
+
+{
 
   imports = [
     inputs.nix-gaming.nixosModules.steamCompat

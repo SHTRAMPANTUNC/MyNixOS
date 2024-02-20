@@ -1,4 +1,7 @@
-{ root, ... }:
+{ root
+, ...
+}:
+
 {
   networking.wg-quick.interfaces.wg0 = {
     autostart = false;

@@ -62,6 +62,7 @@
           specialArgs = {
             inherit inputs outputs;
             root = ./.;
+            user = "kuper";
           };
         };
       };

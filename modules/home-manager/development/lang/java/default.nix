@@ -1,4 +1,6 @@
-{ pkgs, ... }:
+{ pkgs
+, ...
+}:
 
 let
   jdkDir = ".jdks";
