@@ -3,10 +3,10 @@
 }:
 
 {
+  networking.wireguard.enable = true;
   networking.wg-quick.interfaces.wg0 = {
     autostart = false;
     address = [ "10.8.0.7/24" ];
-    mtu = 1450;
     privateKeyFile = "${root}/secrets/work-vpn-wg.key";
 
     peers = [{

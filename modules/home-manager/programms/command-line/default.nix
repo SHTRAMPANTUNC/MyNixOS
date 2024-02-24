@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./cli
+    ./utils
     ./kitty
     ./shell
     ./git

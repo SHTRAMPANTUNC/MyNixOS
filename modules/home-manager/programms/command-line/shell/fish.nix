@@ -13,7 +13,6 @@
       end
     '';
     shellAliases = {
-      fzf = "fzf --border --preview 'bat --color=always {}' --prompt 'Files> '";
       vimf = "vim (fzf)";
       tree = "eza --tree -L 3";
       l = "eza --icons -F -H --group-directories-first --git";

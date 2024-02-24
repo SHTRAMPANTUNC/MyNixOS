@@ -12,14 +12,20 @@
     ];
 
   boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/d6fb7cca-94e5-4356-8e21-18f9846bd8a1";
       fsType = "ext4";
+    };
+
+  fileSystems."/mnt/sda2" =
+    {
+      device = "/dev/sda2";
+      fsType = "ntfs-3g";
+      options = [ "rw" ];
     };
 
   fileSystems."/boot" =

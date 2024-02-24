@@ -25,6 +25,11 @@
     };
   };
 
+  programs = {
+    slock.enable = true;
+    xss-lock.enable = true;
+  };
+
   xdg.portal = {
     enable = true;
     config.common.default = "*";
