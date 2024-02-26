@@ -1,9 +1,9 @@
-{ pkgs ? import <nixpkgs> { } }:
-pkgs.mkShell {
+{ pkgs ? import <nixpkgs> { } }: 
+  pkgs.mkShell
+{
   packages = with pkgs; [
     alejandra
     deadnix
-    git
     nil
   ];
 
@@ -12,6 +12,7 @@ pkgs.mkShell {
 
   shellHook = '' 
     clear
+    ${config.pre-commit.installationScript}
     echo "
           ::::::::::       :::            :::        :::    :::       :::::::::: 
          :+:              :+:          :+: :+:      :+:   :+:        :+:         

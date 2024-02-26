@@ -7,8 +7,8 @@
 
 {
   imports = [
-    ./nixos
     inputs.home-manager.nixosModules.home-manager
+    ./nixos
   ];
   home-manager = {
     useGlobalPkgs = true;
