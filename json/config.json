@@ -1,0 +1,36 @@
+{
+    "bar": {
+        "logotype": {
+            "enabled": true,
+            "image": "/home/kuper/.config/awesome/themes/kanagawa/nixos-icon.svg"
+        },
+        "tags": {
+            "enabled": true,
+            "style": "default"
+        },
+        "clock": {
+            "enabled": true
+        },
+        "keyboard": {
+            "enabled": true
+        },
+        "micro": {
+            "enabled": true
+        },
+        "sound": {
+            "enabled": true,
+            "text": true
+        },
+        "systray": {
+            "enabled": true,
+            "opened": true
+        },
+        "layoutbox": {
+            "enabled": true
+        }
+    },
+    "launcher": {
+        "enabled": true,
+        "icons": true
+    }
+}
