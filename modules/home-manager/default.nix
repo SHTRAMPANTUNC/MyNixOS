@@ -1,5 +1,6 @@
 { inputs
 , pkgs
+, user
 , ...
 }:
 
@@ -11,11 +12,10 @@
   ];
 
   home = {
-    username = "kuper";
-    homeDirectory = "/home/kuper";
+    username = user;
+    homeDirectory = "/home/${user}";
     stateVersion = "24.05";
     packages = with pkgs; [
-      vesktop
       obsidian
       tdesktop
     ];
