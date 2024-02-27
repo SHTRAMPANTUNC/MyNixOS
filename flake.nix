@@ -21,6 +21,10 @@
         url = "github:nix-community/neovim-nightly-overlay";
       };
 
+      devenv = {
+        url = "github:cachix/devenv";
+      };
+
       nix-gaming = {
         url = "github:fufexan/nix-gaming";
       };
@@ -47,6 +51,7 @@
 
   outputs = { self, nixpkgs, ... } @inputs: with inputs;
     let
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
       mkSystem = import ./lib/mkSystem.nix {
         inherit nixpkgs inputs;
       };
@@ -55,6 +60,13 @@
       nixosConfigurations.jano = mkSystem "jano" rec {
         user = "kuper";
         system = "x86_64-linux";
+      };
+      devShells = {
+        x86_64-linux.default = (
+          import ./shell.nix {
+            inherit inputs pkgs;
+          }
+        );
       };
     };
 }
