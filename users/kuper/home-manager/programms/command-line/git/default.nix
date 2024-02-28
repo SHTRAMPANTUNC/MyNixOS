@@ -8,7 +8,6 @@
     extensions = with pkgs; [ gh-eco gh-dash ];
     gitCredentialHelper.enable = true;
   };
-
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
@@ -24,6 +23,10 @@
       s = "status";
       uncommit = "reset --soft head^";
       unadd = "reset";
+    };
+    signing = {
+      key = "1B36B377A5B525968A34ACBFD0DEC6102198D067";
+      signByDefault = true;
     };
     extraConfig = {
       init = {
