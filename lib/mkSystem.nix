@@ -8,9 +8,9 @@ name:
 }:
 
 let
-  machineConfig = ../host/${name};
-  userOSConfig = ../modules/${user}/nixos;
-  userHMConfig = ../modules/${user}/home-manager;
+  hostConfig = ../hosts/${name};
+  userOSConfig = ../users/${user}/nixos;
+  userHMConfig = ../users/${user}/home-manager;
 
   systemFunc = nixpkgs.lib.nixosSystem;
   home-manager = inputs.home-manager.nixosModules;
@@ -24,7 +24,7 @@ systemFunc rec {
   };
 
   modules = [
-    machineConfig
+    hostConfig
     userOSConfig
     home-manager.home-manager
     {

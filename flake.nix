@@ -21,8 +21,9 @@
         url = "github:nix-community/neovim-nightly-overlay";
       };
 
-      devenv = {
-        url = "github:cachix/devenv";
+      agenix = {
+        url = "github:ryantm/agenix";
+        inputs.nixpkgs.follows = "nixpkgs";
       };
 
       nix-gaming = {
@@ -35,11 +36,6 @@
 
       firefox-addons = {
         url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-
-      sops-nix = {
-        url = "github:Mic92/sops-nix";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
