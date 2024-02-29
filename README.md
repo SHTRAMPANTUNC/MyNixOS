@@ -34,6 +34,6 @@
 * **Move the window to another desktop** - `super + shift + 1/6`
 *  **Restart awesomeWM** - `ctrl + super + r`
 
-The other hotkeys are in `~/.config/sxhkd/sxhkdrc`.
-
 #
+
+WM config in `awesomeWM branch`.
