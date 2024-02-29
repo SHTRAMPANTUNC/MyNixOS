@@ -15,6 +15,7 @@
 
  - OS: [**`NixOS`**](https://nixos.org/)
  - WM - [**`awesomeWM`**](https://awesomewm.org/);
+ - Editor [**`Neovim`**](https://neovim.io/)
  - Bar - [**`Wibox`**](https://awesomewm.org/);
  - X Compositor [**`Compfy`**](https://github.com/allusive-dev/compfy);
  - Terminal - [**`Kitty`**](https://sw.kovidgoyal.net/kitty/);
@@ -36,4 +37,6 @@
 
 #
 
-WM config in `awesomeWM branch`.
+WM config in `awesomeWM branch`
+
+Also see [`MyNvim config`](https://github.com/SHTRAMPANTUNC/MyNvim)
