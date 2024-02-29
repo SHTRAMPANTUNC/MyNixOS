@@ -20,8 +20,8 @@
       cls = "clear";
       vim = "nvim";
       f = "feh -g 1920x1080 -d -S filename";
-      w-on = "wg-quick up $HOME/.kupr_desktop.conf";
-      w-off = "wg-quick down $HOME/.kupr_desktop.conf";
+      wg-on = "systemctl start wg-quick-wg0";
+      wg-off = "systemctl stop wg-quick-wg0";
     };
   };
 }

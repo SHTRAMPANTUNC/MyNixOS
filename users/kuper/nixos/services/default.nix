@@ -2,9 +2,10 @@
 {
   imports = [
     ./xorg.nix
+    ./auth.nix
     ./sound.nix
     ./docker.nix
-    ./openssh.nix
+    ./greetd.nix
     ./bluetooth.nix
   ];
 }

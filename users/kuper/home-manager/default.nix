@@ -1,21 +1,22 @@
 { inputs
 , pkgs
+, user
 , ...
 }:
 
 {
   imports = [
     inputs.spicetify-nix.homeManagerModule
+    inputs.sops-nix.homeManagerModules.sops
     ./misc
     ./programms
   ];
 
   home = {
-    username = "kuper";
-    homeDirectory = "/home/kuper";
+    username = user;
+    homeDirectory = "/home/${user}";
     stateVersion = "24.05";
     packages = with pkgs; [
-      vesktop
       obsidian
       tdesktop
     ];

@@ -10,6 +10,7 @@
         awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-luajit-git;
       })
   ];
+
   services = {
     xserver = {
       displayManager = {

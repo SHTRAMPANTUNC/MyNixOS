@@ -21,6 +21,11 @@
         url = "github:nix-community/neovim-nightly-overlay";
       };
 
+      sops-nix = {
+        url = "github:Mic92/sops-nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
       nix-gaming = {
         url = "github:fufexan/nix-gaming";
       };
@@ -34,38 +39,30 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      sops-nix = {
-        url = "github:Mic92/sops-nix";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-
       home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
       };
     };
 
-  outputs = { self, ... } @inputs: with inputs;
+  outputs = { self, nixpkgs, ... } @inputs: with inputs;
     let
-      inherit (self) outputs;
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      mkSystem = import ./lib/mkSystem.nix {
+        inherit nixpkgs inputs;
+      };
     in
     {
-      devShells.x86_64-linux.default = (import ./shell.nix { inherit pkgs; });
-
-      nixosConfigurations = {
-        jano = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./modules
-            ./host
-          ];
-          specialArgs = {
-            inherit inputs outputs;
-            root = ./.;
-            user = "kuper";
-          };
-        };
+      nixosConfigurations.jano = mkSystem "jano" rec {
+        user = "kuper";
+        system = "x86_64-linux";
+      };
+      devShells = {
+        x86_64-linux.default = (
+          import ./shell.nix {
+            inherit inputs pkgs;
+          }
+        );
       };
     };
 }

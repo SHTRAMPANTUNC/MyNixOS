@@ -1,9 +1,9 @@
 { pkgs
-, root
+, config
 , inputs
 , user
 , ...
-}: 
+}:
 
 {
 
@@ -29,10 +29,13 @@
     VISUAL = "nvim";
   };
 
+  sops.secrets.password.neededForUsers = true;
+
   users = {
     users = {
       ${user} = {
-        hashedPasswordFile = "${root}/secrets/passwd.nix";
+        hashedPasswordFile = config.sops.secrets.password.path;
+        initialPassword = "password";
         isNormalUser = true;
         shell = pkgs.fish;
         extraGroups = [ "wheel" "networkmanager" "audio" "video" "docker" ];
