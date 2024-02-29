@@ -7,6 +7,7 @@
 {
   imports = [
     inputs.spicetify-nix.homeManagerModule
+    inputs.sops-nix.homeManagerModules.sops
     ./misc
     ./programms
   ];

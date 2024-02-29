@@ -12,7 +12,6 @@
     defaultSopsFile = "${root}/secrets/secrets.yaml";
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
-    secrets.github_token.owner = user;
   };
 
   users.users.${user}.extraGroups = [ config.users.groups.keys.name ];
