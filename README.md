@@ -1,22 +1,39 @@
+<h1 align="center"> Its Just my sweety config for  <code>NixOS❄️</code> </h1>
 
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/github/repo-size/SHTRAMPANTUNC/MyNixOS?style=for-the-badge">
+  </br>
+</p>
 
 ###
 
-<h3>
-  Its Just my sweety config for <code>NixOS❄️</code>
-</h3>
-<br>
+<h1 align="left"> :blue_book: About</h1> 
 
-</div>
+<img src="images/desktop.jpg" alt="rice" align="right" width="500px">
 
-![nvim screenshot](./images/desktop.jpg)
+</br>
 
+ - OS: [**`NixOS`**](https://nixos.org/)
+ - WM - [**`awesomeWM`**](https://awesomewm.org/);
+ - Bar - [**`Wibox`**](https://awesomewm.org/);
+ - X Compositor [**`Compfy`**](https://github.com/allusive-dev/compfy);
+ - Terminal - [**`Kitty`**](https://sw.kovidgoyal.net/kitty/);
+ - Shell - [**`Fish`**](https://fishshell.com/);
+ - Promt - [**`Statship`**](https://starship.rs/);
 
-## Env Apps 📦
+</br>
 
-  - WM - [awesomeWM](https://awesomewm.org/);
-  - Editor - [Neovim](https://neovim.io/);
-  - X Compositor [Compfy](https://github.com/allusive-dev/compfy);
-  - Terminal - [Kitty](https://sw.kovidgoyal.net/kitty/);
-  - Shell - [Fish](https://fishshell.com/);
+## 💻 HotKeys
+* **Open the terminal** - `super + return`
+* **Switch the to float** - `ctrl + super + space`
+* **Open the application menu** - `super + d`
+* **Lock the screen** - `super + l`
+* **Close the window that is in focus** - `super + c`
+* **Take a screenshot** - `print`
+* **Switch to another desktop** - `super + 1/6`
+* **Move the window to another desktop** - `super + shift + 1/6`
+*  **Restart awesomeWM** - `ctrl + super + r`
+
+The other hotkeys are in `~/.config/sxhkd/sxhkdrc`.
+
+#
