@@ -17,19 +17,12 @@
     };
   };
 
-  # IDK where to put this
-  nixpkgs.overlays = [
-    inputs.neovim-nightly-overlay.overlay
-  ];
-
-  environment.variables = {
+    environment.variables = {
     SUDO_EDITOR = "nvim";
     SYSTEMD_EDITOR = "nvim";
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
-
-  sops.secrets.password.neededForUsers = true;
 
   users = {
     users = {

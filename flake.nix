@@ -48,8 +48,11 @@
   outputs = { self, nixpkgs, ... } @inputs: with inputs;
     let
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      overlays = [
+        inputs.neovim-nightly-overlay.overlay
+      ];
       mkSystem = import ./lib/mkSystem.nix {
-        inherit nixpkgs inputs;
+        inherit nixpkgs overlays inputs;
       };
     in
     {

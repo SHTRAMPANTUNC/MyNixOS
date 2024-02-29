@@ -1,5 +1,6 @@
 { nixpkgs
 , inputs
+, overlays
 }:
 
 name:
@@ -24,6 +25,8 @@ systemFunc rec {
   };
 
   modules = [
+    { nixpkgs.overlays = overlays; }
+
     hostConfig
     userOSConfig
     home-manager.home-manager

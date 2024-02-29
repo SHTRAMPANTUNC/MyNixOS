@@ -7,6 +7,7 @@
   networking.wg-quick.interfaces.wg0 = {
     autostart = false;
     address = [ "10.8.0.7/24" ];
+    dns = [ "1.1.1.1" ];
     privateKeyFile = "${root}/secrets/work-vpn-wg.key";
 
     peers = [{
