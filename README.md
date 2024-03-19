@@ -9,7 +9,7 @@
 
 <h1 align="left"> :blue_book: About</h1> 
 
-<img src="assets/desktop.jpg" alt="rice" align="right" width="500px">
+<img src="assets/preview.jpg" alt="rice" align="right" width="500px">
 
 </br>
 
