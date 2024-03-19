@@ -1,0 +1,7 @@
+keys:
+  - &kuper age1cd0z9xkhpx73x36e0gxd5fwghf23kgxaymek9p4s6mfys5lqdalqfxmt2l
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+    - age:
+      - *kuper
