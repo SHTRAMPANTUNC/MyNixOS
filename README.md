@@ -14,29 +14,34 @@
 </br>
 
  - OS: [**`NixOS`**](https://nixos.org/)
- - WM - [**`awesomeWM`**](https://awesomewm.org/);
+ - WM - [**`Hyprand`**](https://hyprland.org/);
  - Editor [**`Neovim`**](https://neovim.io/)
- - Bar - [**`Wibox`**](https://awesomewm.org/);
- - X Compositor [**`Compfy`**](https://github.com/allusive-dev/compfy);
- - Terminal - [**`Kitty`**](https://sw.kovidgoyal.net/kitty/);
+ - Bar - [**`Waybar`**](https://github.com/Alexays/Waybar);
+ - Terminal - [**`Foot`**](https://codeberg.org/dnkl/foot);
  - Shell - [**`Fish`**](https://fishshell.com/);
  - Promt - [**`Statship`**](https://starship.rs/);
 
 </br>
 
 ## 💻 HotKeys
-* **Open the terminal** - `super + return`
-* **Switch the to float** - `ctrl + super + space`
-* **Open the application menu** - `super + d`
-* **Lock the screen** - `super + l`
-* **Close the window that is in focus** - `super + c`
-* **Take a screenshot** - `print`
-* **Switch to another desktop** - `super + 1/6`
-* **Move the window to another desktop** - `super + shift + 1/6`
-*  **Restart awesomeWM** - `ctrl + super + r`
+| Keys        | Function          |
+| ------------- |-------------|
+| <kbd>SUPER</kbd> <kbd>SHIFT</kbd> <kbd>c</kbd>  | Kill Active Window |
+| <kbd>SUPER</kbd> <kbd>f</kbd> | Toggle FullScreen |
+| <kbd>SUPER</kbd> <kbd>Space</kbd> | Toggle Floating |
+| <kbd>SUPER</kbd> <kbd>j</kbd> / <kbd>k</kbd> | Move Focus prev/next |
+| <kbd>SUPERSHIFT</kbd> <kbd>j</kbd> / <kbd>k</kbd> | Move Window prev/next |
+| <kbd>SUPER</kbd> <kbd>Return</kbd> | Open Terminal |
+| <kbd>SUPER</kbd> <kbd>l</kbd> | [Hyprlock](https://github.com/hyprwm/hyprlock/); |
+| <kbd>Print</kbd> | Screenshot |
+| <kbd>SUPER</kbd> <kbd>p</kbd>| [Color Picker](https://github.com/hyprwm/hyprpicker) |
+| <kbd>SUPER</kbd> <kbd>n</kbd> | [Swaync](https://github.com/ErikReider/SwayNotificationCenter) |
+| <kbd>SUPER</kbd> <kbd>d</kbd> | [Anyrun](https://github.com/Kirottu/anyrun) |
+| <kbd>SUPER</kbd> <kbd>v</kbd> / <kbd>Shift + v</kbd> | Change Volume +/- |
+| <kbd>SUPER</kbd> <kbd>m</kbd> | Mute Microphone |
+| <kbd>SUPERSHIFT</kbd> <kbd>s</kbd> | Resize Mode |
+| <kbd>SUPERSHIFT</kbd> <kbd>l</kbd> /<kbd>h</kbd> /<kbd>j</kbd> /<kbd>k</kbd> | Resize Window Right/Left/Up/Down |
 
 #
-
-WM config in `awesomeWM branch`
 
 Also see [`MyNvim config`](https://github.com/SHTRAMPANTUNC/MyNvim)
