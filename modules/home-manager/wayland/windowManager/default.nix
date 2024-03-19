@@ -47,7 +47,6 @@ in {
     ./waybar
     ./swaync
 
-    ./clipboard.nix
     ./hyprlock.nix
   ];
   home.packages = with pkgs; [
