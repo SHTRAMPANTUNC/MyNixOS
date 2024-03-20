@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   console = {
     useXkbConfig = true;
     colors = [

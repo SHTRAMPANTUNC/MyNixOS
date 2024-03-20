@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   minegrub = pkgs.fetchFromGitHub {
     owner = "Lxtharia";
     repo = "minegrub-world-sel-theme";
@@ -7,7 +10,6 @@ let
     hash = "sha256-59fehgaYd4zz2A0A90qMtnKtPBGqW4Njk8niYPL2E0o=";
   };
 in {
-
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {

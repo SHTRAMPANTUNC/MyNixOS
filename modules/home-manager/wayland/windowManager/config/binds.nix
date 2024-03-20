@@ -1,58 +1,69 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
+  terminal = config.home.sessionVariables.TERMINAL;
   screenshotarea = "grimblast --notify --freeze copy area";
+  cliphist = "cliphist list | rofi -dmenu | cliphist decode | wl-copy";
+  launcher = "rofi -show";
 
-  workspaces = builtins.concatLists (builtins.genList (x:
-    let ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
+  workspaces = builtins.concatLists (builtins.genList (x: let
+      ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
     in [
       "SUPER, ${ws}, workspace, ${toString (x + 1)}"
       "SUPERSHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
-    ]) 10);
-
-  # Get default application
-  terminal = config.home.sessionVariables.TERMINAL;
+    ])
+    10);
 in {
   wayland.windowManager.hyprland = {
     settings = {
-      bind = [
-        # Compositor commands
-        "SUPERSHIFT, C, killactive"
-        "SUPER, F, fullscreen"
-        "SUPER, Space, togglefloating"
+      bind =
+        [
+          # Compositor commands
+          "SUPERSHIFT, C, killactive"
+          "SUPER, F, fullscreen"
+          "SUPER, Space, togglefloating"
 
-        # Grouped (tabbed) windows
-        "SUPER, G, togglegroup"
-        "SUPER, TAB, changegroupactive, f"
-        "SUPERSHIFT, TAB, changegroupactive, b"
+          # Grouped (tabbed) windows
+          "SUPER, G, togglegroup"
+          "SUPER, TAB, changegroupactive, f"
+          "SUPERSHIFT, TAB, changegroupactive, b"
 
-        # Move focus
-        "SUPER, j, layoutmsg, cyclenext"
-        "SUPER, k, layoutmsg, cycleprev"
+          # Move focus
+          "SUPER, j, layoutmsg, cyclenext"
+          "SUPER, k, layoutmsg, cycleprev"
 
-        # Move windows
-        "SUPERSHIFT, j, layoutmsg, swapnext"
-        "SUPERSHIFT, k, layoutmsg, swapprev"
+          # Move windows
+          "SUPERSHIFT, j, layoutmsg, swapnext"
+          "SUPERSHIFT, k, layoutmsg, swapprev"
 
-        # Cycle through workspaces
-        "SUPERALT, up, workspace, m-1"
-        "SUPERALT, down, workspace, m+1"
+          # Cycle through workspaces
+          "SUPERALT, up, workspace, m-1"
+          "SUPERALT, down, workspace, m+1"
+          #Terminal
+          "SUPER, Return, exec, ${terminal}"
 
-        # Utilities
-        "SUPER, Return, exec, ${terminal}"
-        "SUPER, L, exec, hyprlock"
+          # LockScreen
+          "SUPER, L, exec, hyprlock"
 
-        # Screenshot
-        ", Print, exec, ${screenshotarea}"
+          # Screenshot
+          ", Print, exec, ${screenshotarea}"
 
-        #Picker
-        "SUPER, P, exec, hyprpicker | wl-copy"
+          #Picker
+          "SUPER, P, exec, hyprpicker | wl-copy"
 
-        #Swaync
-        "SUPER, N, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw"
+          #Swaync
+          "SUPER, N, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw"
 
-        # Launchers
-        "SUPER, D, exec, anyrun"
-      ] ++ workspaces;
+          # Launchers
+          "SUPER, D, exec, ${launcher}"
+
+          #Cliphist
+          "SUPER, C, exec, ${cliphist}"
+        ]
+        ++ workspaces;
 
       binde = [
         # Audio
@@ -62,8 +73,7 @@ in {
       ];
 
       # Mouse bindings
-      bindm =
-        [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
+      bindm = ["SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow"];
     };
 
     extraConfig = ''
@@ -79,4 +89,3 @@ in {
     '';
   };
 }
-

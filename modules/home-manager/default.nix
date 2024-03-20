@@ -1,6 +1,9 @@
-{ inputs, pkgs, user, ... }:
-
 {
+  inputs,
+  pkgs,
+  user,
+  ...
+}: {
   imports = [
     inputs.spicetify-nix.homeManagerModule
     inputs.sops-nix.homeManagerModules.sops

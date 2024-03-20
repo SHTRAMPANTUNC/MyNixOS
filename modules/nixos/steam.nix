@@ -1,6 +1,8 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs = {
     steam = {
       enable = true;
@@ -9,5 +11,5 @@
     gamemode.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [ mangohud protonup-qt ];
+  environment.systemPackages = with pkgs; [mangohud protonup-qt];
 }

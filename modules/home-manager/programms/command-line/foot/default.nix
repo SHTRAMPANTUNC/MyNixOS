@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ libsixel ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [libsixel];
 
   home.sessionVariables.TERMINAL = "foot";
 
@@ -11,7 +11,7 @@
         dpi-aware = "yes";
         line-height = 23;
       };
-      mouse = { hide-when-typing = "yes"; };
+      mouse = {hide-when-typing = "yes";};
       cursor = {
         style = "beam";
         color = "1e1e2e cdd6f4";

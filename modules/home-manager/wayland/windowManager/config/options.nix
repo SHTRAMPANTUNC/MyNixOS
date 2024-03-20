@@ -1,12 +1,15 @@
-{ config, root, ... }:
-
-let pointer = config.home.pointerCursor;
+{
+  config,
+  root,
+  ...
+}: let
+  pointer = config.home.pointerCursor;
 in {
   wayland.windowManager.hyprland.settings = {
     animations = {
       enabled = true;
 
-      bezier = [ "md3_decel, 0.05, 0.7, 0.1, 1" "workspace,0.17, 1.17, 0.3,1" ];
+      bezier = ["md3_decel, 0.05, 0.7, 0.1, 1" "workspace,0.17, 1.17, 0.3,1"];
 
       animation = [
         "border, 1, 2, default"
@@ -47,6 +50,8 @@ in {
     exec-once = [
       "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       "swww init & sleep 0.5 && exec swww img ${root}/assets/walls/catppuccin_wall.jpg --transition-type simple"
+      "wl-paste --type text --watch cliphist store"
+      "wl-paste --type image --watch cliphist store"
     ];
 
     general = {
@@ -72,6 +77,6 @@ in {
       force_default_wallpaper = 0;
     };
 
-    monitor = [ "DP-1,2560x1440@165,0x0,1" "HDMI-A-1,1920x1080@144,2560x0,1" ];
+    monitor = ["DP-1,2560x1440@165,0x0,1" "HDMI-A-1,1920x1080@144,2560x0,1"];
   };
 }

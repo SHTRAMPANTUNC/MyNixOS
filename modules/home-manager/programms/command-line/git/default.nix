@@ -1,8 +1,11 @@
-{ pkgs, gitsignbydefault, ... }: {
-
+{
+  pkgs,
+  gitsignbydefault,
+  ...
+}: {
   programs.gh = {
     enable = true;
-    extensions = with pkgs; [ gh-eco gh-dash ];
+    extensions = with pkgs; [gh-eco gh-dash];
     gitCredentialHelper.enable = true;
   };
   programs.git = {
@@ -26,10 +29,10 @@
       signByDefault = true;
     };
     extraConfig = {
-      init = { defaultbranch = "main"; };
-      branch = { sort = "-committerdate"; };
-      pull = { rebase = true; };
-      push = { default = "simple"; };
+      init = {defaultbranch = "main";};
+      branch = {sort = "-committerdate";};
+      pull = {rebase = true;};
+      push = {default = "simple";};
     };
     ignores = [
       # c commons

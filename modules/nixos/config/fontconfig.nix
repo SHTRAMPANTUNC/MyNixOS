@@ -1,14 +1,12 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   fonts = {
     fontconfig = {
       enable = true;
       defaultFonts = {
-        emoji = [ "Noto Color Emoji" ];
-        monospace = [ "JetBrainsMono" ];
-        serif = [ "Noto Serif" ];
-        sansSerif = [ "Inter" ];
+        emoji = ["Noto Color Emoji"];
+        monospace = ["JetBrainsMono"];
+        serif = ["Noto Serif"];
+        sansSerif = ["Inter"];
       };
     };
     packages = with pkgs; [
@@ -20,7 +18,7 @@
       material-icons
       dejavu_fonts
       open-sans
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
   };
 }

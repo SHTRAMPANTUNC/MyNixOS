@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./gtk.nix ./cursor.nix ]; }
+{...}: {imports = [./gtk.nix ./cursor.nix];}

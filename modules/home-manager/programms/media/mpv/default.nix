@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.mpv = {
     enable = true;
     config = {
@@ -11,6 +9,6 @@
       profile = "gpu-hq";
       vo = "gpu";
     };
-    scripts = with pkgs.mpvScripts; [ mpris thumbnail sponsorblock ];
+    scripts = with pkgs.mpvScripts; [mpris thumbnail sponsorblock];
   };
 }

@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-
-{
-  home.packages = with pkgs; [ tdesktop ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [tdesktop];
   home.file.".config/telegram/colors.tdesktop-theme".text = ''
     name: Catppuccin Mocha
     shortname: ctp_mocha
     dark: true
 
-    // Palette 
+    // Palette
 
     crust: #11111b;
     mantle: #181825;
@@ -36,7 +34,7 @@
     tflamingo: #f2cdcd;
     trosewater: #f5e0dc;
 
-    // Theme variables 
+    // Theme variables
 
     windowBg: base
     windowFg: text

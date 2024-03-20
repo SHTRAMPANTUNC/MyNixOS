@@ -1,2 +1,1 @@
-{ ... }: { imports = [ ./dconf.nix ./fontconfig.nix ./console.nix ]; }
-
+{...}: {imports = [./dconf.nix ./fontconfig.nix ./console.nix];}

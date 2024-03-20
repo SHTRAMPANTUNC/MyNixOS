@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./cpp.nix ./java.nix ./go.nix ]; }
+{...}: {imports = [./cpp.nix ./java.nix ./go.nix];}

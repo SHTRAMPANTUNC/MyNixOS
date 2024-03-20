@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-
-let jdkDir = ".jdks";
+{pkgs, ...}: let
+  jdkDir = ".jdks";
 in {
   programs.java = {
     enable = true;

@@ -13,8 +13,7 @@
       vimf = "vim (fzf)";
       tree = "eza --tree -L 3";
       l = "eza --icons -F -H --group-directories-first --git";
-      snr =
-        "sudo nixos-rebuild --flake /home/kuper/MyFlake#jano switch --upgrade --show-trace";
+      snr = "sudo nixos-rebuild --flake /home/kuper/MyFlake#jano switch --upgrade --show-trace";
       nixd = "nix develop --command fish";
       cls = "clear";
       vim = "nvim";

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file.".clang-format".text = ''
     BasedOnStyle: LLVM
     TabWidth: 4

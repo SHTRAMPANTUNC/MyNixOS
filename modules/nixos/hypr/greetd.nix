@@ -1,5 +1,10 @@
-{ pkgs, lib, user, ... }: {
-  security.pam.services.greetd = { enableGnomeKeyring = true; };
+{
+  pkgs,
+  lib,
+  user,
+  ...
+}: {
+  security.pam.services.greetd = {enableGnomeKeyring = true;};
   services.greetd = let
     session = {
       command = "${lib.getExe pkgs.overHyprland}";

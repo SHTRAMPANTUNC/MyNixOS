@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./auth.nix ./sound.nix ./docker.nix ./bluetooth.nix ]; }
+{...}: {imports = [./auth.nix ./sound.nix ./docker.nix ./bluetooth.nix];}

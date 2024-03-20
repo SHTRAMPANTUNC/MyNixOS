@@ -3,8 +3,8 @@ return {
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "make",
+				-- "nvim-telescope/telescope-fzf-native.nvim",
+				-- build = "make",
 			},
 		},
         cmd = "Telescope oldfiles",
@@ -77,7 +77,7 @@ return {
 					},
 				},
 			})
-			require("telescope").load_extension("fzf")
+			-- require("telescope").load_extension("fzf")
 		end,
 	},
 }

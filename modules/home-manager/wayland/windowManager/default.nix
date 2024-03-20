@@ -1,51 +1,56 @@
-{ config, pkgs, inputs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: let
   _ = lib.getExe;
-  volumectl = let inherit (pkgs) libnotify pamixer libcanberra-gtk3;
-  in pkgs.writeShellScriptBin "volumectl" ''
-    #!/usr/bin/env bash
+  volumectl = let
+    inherit (pkgs) libnotify pamixer libcanberra-gtk3;
+  in
+    pkgs.writeShellScriptBin "volumectl" ''
+      #!/usr/bin/env bash
 
-    case "$1" in
-    up)
-      ${_ pamixer} -i "$2"
-      ;;
-    down)
-      ${_ pamixer} -d "$2"
-      ;;
-    toggle-mute)
-      ${_ pamixer} -t
-      ;;
-    esac
+      case "$1" in
+      up)
+        ${_ pamixer} -i "$2"
+        ;;
+      down)
+        ${_ pamixer} -d "$2"
+        ;;
+      toggle-mute)
+        ${_ pamixer} -t
+        ;;
+      esac
 
-    volume_percentage="$(${_ pamixer} --get-volume)"
-    isMuted="$(${_ pamixer} --get-mute)"
+      volume_percentage="$(${_ pamixer} --get-volume)"
+      isMuted="$(${_ pamixer} --get-mute)"
 
-    if [ "$isMuted" = "true" ]; then
-      ${libnotify}/bin/notify-send --transient \
-        -u normal \
-        -a "VOLUMECTL" \
-        -i audio-volume-muted-symbolic \
-        "VOLUMECTL" "Volume Muted"
-    else
-      ${libnotify}/bin/notify-send --transient \
-        -u normal \
-        -a "VOLUMECTL" \
-        -h string:x-canonical-private-synchronous:volumectl \
-        -h int:value:"$volume_percentage" \
-        -i audio-volume-high-symbolic \
-        "VOLUMECTL" "Volume: $volume_percentage%"
+      if [ "$isMuted" = "true" ]; then
+        ${libnotify}/bin/notify-send --transient \
+          -u normal \
+          -a "VOLUMECTL" \
+          -i audio-volume-muted-symbolic \
+          "VOLUMECTL" "Volume Muted"
+      else
+        ${libnotify}/bin/notify-send --transient \
+          -u normal \
+          -a "VOLUMECTL" \
+          -h string:x-canonical-private-synchronous:volumectl \
+          -h int:value:"$volume_percentage" \
+          -i audio-volume-high-symbolic \
+          "VOLUMECTL" "Volume: $volume_percentage%"
 
-      ${libcanberra-gtk3}/bin/canberra-gtk-play -i audio-volume-change -d "volumectl"
-    fi
-  '';
-
+        ${libcanberra-gtk3}/bin/canberra-gtk-play -i audio-volume-change -d "volumectl"
+      fi
+    '';
 in {
   imports = [
     ./config
-    ./anyrun
     ./waybar
     ./swaync
+    ./rofi
 
     ./hyprlock.nix
   ];
@@ -54,10 +59,11 @@ in {
     glib
     gtk3
     swww
+    cliphist
     hyprpicker
     grimblast
-    wl-clipboard
     xdg-utils
+    wl-clipboard
 
     # Custom Utilities
     volumectl

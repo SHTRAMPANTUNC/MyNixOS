@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./discord ./telegram ]; }
+{...}: {imports = [./discord ./telegram];}

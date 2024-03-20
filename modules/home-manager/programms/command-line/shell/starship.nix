@@ -23,20 +23,20 @@
           trim_at = ".";
           disabled = false;
         };
-        nix_shell = { symbol = " "; };
+        nix_shell = {symbol = " ";};
         golang = {
           style = "blue";
           symbol = " ";
         };
-        lua = { symbol = " "; };
+        lua = {symbol = " ";};
         cmake = {
           style = "green";
           symbol = "△ ";
         };
-        git_branch = { symbol = " "; };
-        rust = { symbol = " "; };
-        nodejs = { symbol = " "; };
-        docker_context = { symbol = " "; };
+        git_branch = {symbol = " ";};
+        rust = {symbol = " ";};
+        nodejs = {symbol = " ";};
+        docker_context = {symbol = " ";};
 
         git_status = {
           conflicted = "🏳 ";
@@ -52,7 +52,6 @@
           truncation_symbol = "…/";
         };
       };
-
     };
   };
 }

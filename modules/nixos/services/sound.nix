@@ -1,7 +1,9 @@
-{ pkgs, inputs, ... }:
-
 {
-  imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [inputs.nix-gaming.nixosModules.pipewireLowLatency];
 
   security.rtkit.enable = true;
   sound.enable = false;
@@ -20,5 +22,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ pamixer pavucontrol pulseaudio ];
+  environment.systemPackages = with pkgs; [pamixer pavucontrol pulseaudio];
 }

@@ -1,12 +1,16 @@
-{ pkgs, config, inputs, user, ... }:
-
 {
+  pkgs,
+  config,
+  inputs,
+  user,
+  ...
+}: {
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";
 
   networking = {
     hostName = "jano";
-    networkmanager = { enable = true; };
+    networkmanager = {enable = true;};
   };
 
   environment = {
@@ -24,14 +28,14 @@
         hashedPasswordFile = config.sops.secrets.password.path;
         isNormalUser = true;
         shell = pkgs.fish;
-        extraGroups = [ "wheel" "networkmanager" "audio" "video" "docker" ];
+        extraGroups = ["wheel" "networkmanager" "audio" "video" "docker"];
       };
     };
   };
   programs.fish.enable = true;
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
     };
     gc = {
