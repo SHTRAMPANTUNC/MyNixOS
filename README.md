@@ -37,6 +37,6 @@
 
 #
 
-WM config in `awesomeWM branch`
+WM config in [`awesomeWM branch`](https://github.com/SHTRAMPANTUNC/MyNixOS/tree/awesomeWM)
 
 Also see [`MyNvim config`](https://github.com/SHTRAMPANTUNC/MyNvim)
