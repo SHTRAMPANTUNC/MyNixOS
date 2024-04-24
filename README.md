@@ -32,11 +32,10 @@
 | <kbd>SUPER</kbd> <kbd>j</kbd> / <kbd>k</kbd> | Move Focus prev/next |
 | <kbd>SUPERSHIFT</kbd> <kbd>j</kbd> / <kbd>k</kbd> | Move Window prev/next |
 | <kbd>SUPER</kbd> <kbd>Return</kbd> | Open Terminal |
-| <kbd>SUPER</kbd> <kbd>l</kbd> | [Hyprlock](https://github.com/hyprwm/hyprlock/); |
 | <kbd>Print</kbd> | Screenshot |
 | <kbd>SUPER</kbd> <kbd>p</kbd>| [Color Picker](https://github.com/hyprwm/hyprpicker) |
 | <kbd>SUPER</kbd> <kbd>n</kbd> | [Swaync](https://github.com/ErikReider/SwayNotificationCenter) |
-| <kbd>SUPER</kbd> <kbd>d</kbd> | [Anyrun](https://github.com/Kirottu/anyrun) |
+| <kbd>SUPER</kbd> <kbd>d</kbd> | [Rofi](https://github.com/davatorium/rofi) |
 | <kbd>SUPER</kbd> <kbd>v</kbd> / <kbd>Shift + v</kbd> | Change Volume +/- |
 | <kbd>SUPER</kbd> <kbd>m</kbd> | Mute Microphone |
 | <kbd>SUPERSHIFT</kbd> <kbd>s</kbd> | Resize Mode |
