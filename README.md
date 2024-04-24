@@ -23,6 +23,12 @@
 
 </br>
 
+## 🖼️ Gallery
+
+<img src="assets/preview2.png" alt="rice" align="center" width="100%">
+<img src="assets/preview3.png" alt="rice" align="center" width="100%">
+<img src="assets/preview4.png" alt="rice" align="center" width="100%">
+
 ## 💻 HotKeys
 | Keys        | Function          |
 | ------------- |-------------|
