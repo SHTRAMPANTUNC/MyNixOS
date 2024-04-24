@@ -59,7 +59,7 @@
         };
 
         devShells.x86_64-linux.default = pkgs.mkShell {
-          packages = with pkgs; [ alejandra nil deadnix nvd ];
+          packages = with pkgs; [ alejandra nil deadnix ];
           name = "ღვინო";
           meta.description = "The default development shell for this flake";
 

@@ -13,10 +13,10 @@ vim.g.mapleader = " "
 map("n", "x", '"_x')
 
 -- Save key strokes
-map({ "n", "x" }, ";", ":")
+-- map({ "n", "x" }, ";", ":")
 
 -- Turn the word under cursor to upper case
-map("i", "<c-u>", "<Esc>viwUea")
+-- map("i", "<c-u>", "<Esc>viwUea")
 
 --Paste without copy into register
 map("x", "p", '"_c<Esc>p')
