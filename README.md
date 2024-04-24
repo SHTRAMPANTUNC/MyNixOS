@@ -13,9 +13,9 @@
 
 </br>
 
- - OS: [**`NixOS`**](https://nixos.org/)
+ - OS- [**`NixOS`**](https://nixos.org/)
  - WM - [**`Hyprand`**](https://hyprland.org/)
- - Editor [**`Neovim`**](https://neovim.io/)
+ - Editor - [**`Neovim`**](https://neovim.io/)
  - Bar - [**`Waybar`**](https://github.com/Alexays/Waybar)
  - Terminal - [**`Foot`**](https://codeberg.org/dnkl/foot)
  - Shell - [**`Fish`**](https://fishshell.com/)
