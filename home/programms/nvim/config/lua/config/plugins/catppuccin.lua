@@ -18,7 +18,7 @@ return {
                 },
                 color_overrides = {
                     mocha = {
-                        base = "#181825",
+                        base = mocha.mantle,
                     },
                 },
                 highlight_overrides = {
@@ -29,6 +29,12 @@ return {
                         NvimTreeGitStagedIcon = { fg = mocha.green },
                         NvimTreeGitNewIcon = { fg = mocha.green },
 
+                        Pmenu = { fg = mocha.overlay2, bg = mocha.base },
+                        PmenuSel = { bg = mocha.blue, fg = mocha.base },
+                        CmpPmenu = { bg = mocha.surface0 },
+                        CmpItemAbbr = { fg = mocha.overlay2 },
+                        CmpItemAbbrMatch = { fg = mocha.blue, style = { "bold" } },
+
                         ["@keyword.import.cpp"] = { fg = mocha.red },
                         ["@namespace"] = { fg = mocha.yellow },
                         ["@string.cmake"] = { fg = mocha.red },
@@ -37,7 +43,6 @@ return {
                 },
                 integrations = {
                     cmp = true,
-                    vimwiki = true,
                     alpha = true,
                     flash = true,
                     gitsigns = true,

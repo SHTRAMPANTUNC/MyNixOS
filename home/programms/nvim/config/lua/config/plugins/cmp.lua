@@ -57,7 +57,7 @@ return {
                 },
             })
 
-            local function border(hl_name)
+--[[             local function border(hl_name)
                 return {
                     { "╭", hl_name },
                     { "─", hl_name },
@@ -68,7 +68,7 @@ return {
                     { "╰", hl_name },
                     { "│", hl_name },
                 }
-            end
+            end ]]
 
             require("luasnip.loaders.from_vscode").lazy_load()
             cmp.setup({
@@ -81,7 +81,7 @@ return {
 
                 window = {
                     completion = {
-                        border = border("CmpDocBorder"),
+                        -- border = border("CmpDocBorder"),
                         winhighlight = "Normal:CmpPmenu,Search:None",
                         scrollbar = false,
                     },
