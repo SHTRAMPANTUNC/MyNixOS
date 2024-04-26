@@ -1,4 +1,5 @@
 return {
+
     {
         "catppuccin/nvim",
         lazy = false,
@@ -46,7 +47,7 @@ return {
                     notify = true,
                 },
             })
-            vim.cmd.colorscheme("catppuccin")
+            vim.cmd.colorscheme(PREF.ui.colorscheme)
         end,
     },
 }

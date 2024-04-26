@@ -1,10 +1,9 @@
 local lsp = require("lspconfig")
-local servers = require("user_settings").lsp.install_servers
 local capabilities = require("config.lsp.handlers").capabilities
 local on_attach = require("config.lsp.handlers").on_attach
 
 --LSP SETUP
-for _, server in ipairs(servers) do
+for _, server in ipairs(PREF.lsp.install_servers) do
     lsp[server].setup({
         capabilities = capabilities,
         on_attach = on_attach,

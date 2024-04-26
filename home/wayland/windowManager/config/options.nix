@@ -45,7 +45,7 @@
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
 
-      "swww init & sleep 0.5 && exec swww img ${root}/assets/walls/walls_flowers.jpg --transition-type simple"
+      "swww init & sleep 0.5 && exec swww img ${root}/assets/walls/011.jpg --transition-type simple"
     ];
 
     general = {

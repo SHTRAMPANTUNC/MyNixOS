@@ -1,7 +1,5 @@
-local user = require("user_settings")
-
-local textwidth = user.PREF.common.textwidth
-local tabwidth = user.PREF.common.tabwidth
+local textwidth = PREF.common.textwidth
+local tabwidth = PREF.common.tabwidth
 
 local options = {
 	-- ===============================

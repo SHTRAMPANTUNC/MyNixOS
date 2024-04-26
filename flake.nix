@@ -4,8 +4,12 @@
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    hyprland.url = "github:hyprwm/Hyprland";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland/v0.39.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     xdghypr = {
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
@@ -74,6 +78,7 @@
             "  | ${pkgs.clolcat}/bin/clolcat
           '';
         };
+        templates = import ./templates;
       };
     };
 }

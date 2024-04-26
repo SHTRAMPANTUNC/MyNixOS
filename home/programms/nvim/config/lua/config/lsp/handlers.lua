@@ -1,11 +1,16 @@
 local M = {}
 
 -- global config for diagnostic
-vim.diagnostic.config(require("user_settings").lsp.diagnostic)
+vim.diagnostic.config(PREF.lsp.diagnostic)
+
+-- diagnostic icons
+for type, icon in pairs(PREF.ui.signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
 local cmp_capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 cmp_capabilities.textDocument.semanticHighlighting = true
