@@ -25,7 +25,7 @@
         devShells.default = pkgs.mkShell {inherit nativeBuildInputs buildInputs;};
 
         packages.default = pkgs.buildGoModule rec {
-          name = "template";
+          name = "some_name";
           src = ./.;
 
           inherit buildInputs;
