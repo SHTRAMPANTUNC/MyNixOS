@@ -5,7 +5,7 @@ local options = {
 	-- ===============================
 	-- Other
 	-- ===============================
-	title = true,
+	title = false,
 	backup = false,
 	backupskip = { "/tmp/*", "/private/tmp/*" },
 	inccommand = "split",

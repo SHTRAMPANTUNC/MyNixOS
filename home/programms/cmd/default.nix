@@ -1,1 +1,1 @@
-{pkgs, ...}: {imports = [./git ./foot ./tmux ./utils ./shell];}
+{ ...}: {imports = [./git ./foot ./tmux ./utils ./shell];}

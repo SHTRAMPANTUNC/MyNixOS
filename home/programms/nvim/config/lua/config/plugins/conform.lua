@@ -7,8 +7,9 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 cpp = { "clang_format" },
-                nix = { "alejandra" },
                 go = { "gofmt", "goimports" },
+                html = { "prettier" },
+                css = { "prettier" },
             },
         })
     end,

@@ -61,8 +61,8 @@ return {
                 type = "group",
                 val = {
                     button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
-                    button("r", "  > Recent", ":Telescope oldfiles<CR>"),
-                    button("s", "  > Settings", ":e /home/kuper/MyFlake/home/programms/nvim/config/init.lua | :cd %:p:h | wincmd k | :NvimTreeOpen<CR>"),
+                    button("u", "  > Update plugins", ":Lazy update<CR>"),
+                    button("s", "  > Settings", ":e /home/kuper/MyFlake/home/programms/nvim/config/init.lua | :cd %:p:h | wincmd k | :NvimTreeOpen<CR>"), -- <--- coz NixOS:)
                     button("q", "󰩈  > Quit NVIM", ":qa<CR>"),
                 },
                 opts = {

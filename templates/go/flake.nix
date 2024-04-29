@@ -18,8 +18,9 @@
         nativeBuildInputs = with pkgs; [
           go
           gopls
+          gotools
         ];
-        buildInputs = with pkgs; [impl];
+        buildInputs = with pkgs; [impl delve];
       in {
         devShells.default = pkgs.mkShell {inherit nativeBuildInputs buildInputs;};
 

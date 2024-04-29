@@ -1,16 +1,15 @@
 local M = {}
 
--- global config for diagnostic
-vim.diagnostic.config(PREF.lsp.diagnostic)
-
--- diagnostic icons
-for type, icon in pairs(PREF.ui.signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+M.diagnostic = function()
+    vim.diagnostic.config(PREF.lsp.diagnostic)
+    for type, icon in pairs(PREF.ui.signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
 end
 
 M.capabilities = {
-    require("cmp_nvim_lsp").default_capabilities(),
+    vim.lsp.protocol.make_client_capabilities()
 }
 
 M.on_attach = function(client, bufnr)
@@ -24,6 +23,8 @@ M.on_attach = function(client, bufnr)
     map("n", "<leader>ca", ":Lspsaga code_action<CR>")
     map("n", "<leader>o", ":Lspsaga outline<CR>")
     map("n", "<leader>rn", ":Lspsaga rename<CR>")
+    map("n", "]d", ":Lspsaga diagnostic_jump_next<CR>")
+    map("n", "[d", ":Lspsaga diagnostic_jump_next<CR>")
 
     if client.server_capabilities.documentFormattingProvider then
         map("n", "<space>f", vim.lsp.buf.format, { desc = "format code" })

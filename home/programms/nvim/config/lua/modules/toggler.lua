@@ -1,10 +1,3 @@
--- Original idea: https://github.com/nguyenvukhang/nvim-toggler
-
--- Switch the word under cursor to the opposite value with saving case
--- DEMO: true => true, True => False, tRuE => fAlSE
--- (if the opposite word longer when current word,
--- the tail of opposite will be the same case as the last char case of current)
-
 local u = require('utils')
 local M = {}
 

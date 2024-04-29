@@ -1,12 +1,11 @@
 {
   pkgs,
-  gitsignbydefault,
   ...
 }: {
   programs.gh = {
     enable = true;
     extensions = with pkgs; [gh-eco gh-dash];
-    gitCredentialHelper.enable = true;
+    gitCredentialHelper.enable = false;
   };
   programs.git = {
     enable = true;

@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   hostname,
   platform,
   stateVersion ? null,

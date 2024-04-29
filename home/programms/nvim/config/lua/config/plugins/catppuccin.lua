@@ -29,7 +29,6 @@ return {
                         NvimTreeGitStagedIcon = { fg = mocha.green },
                         NvimTreeGitNewIcon = { fg = mocha.green },
 
-                        Pmenu = { fg = mocha.overlay2, bg = mocha.base },
                         PmenuSel = { bg = mocha.blue, fg = mocha.base },
                         CmpPmenu = { bg = mocha.surface0 },
                         CmpItemAbbr = { fg = mocha.overlay2 },

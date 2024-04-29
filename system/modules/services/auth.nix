@@ -6,6 +6,7 @@
       settings.KbdInteractiveAuthentication = false;
     };
   };
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;

@@ -1,5 +1,5 @@
+local cb = require("utils").lazy_rhs_cb
 local u = require("utils")
-local cb = u.lazy_rhs_cb
 
 local map = vim.keymap.set
 
@@ -78,9 +78,37 @@ map("x", "c", '"_c')
 -- ####			  custom keybindings	         ####
 -- ##################################################
 
+local function move_line(op)
+    return function()
+        local start = op == "+" and 1 or 2
+        local count = vim.v.count
+        local times = count == 0 and start or (op == "+" and count or count + 1)
+        local ok, _ = pcall(vim.cmd.move, op .. times)
+        if ok then
+            vim.cmd.norm("==")
+        end
+    end
+end
+
+local function move_selected(op)
+    return function()
+        local restore_autocmd = u.disable_autocmd("toggle_relnum")
+
+        local start = op == "+" and "" or 2
+        local count = vim.v.count
+        local times = count == 0 and start or (op == "+" and count or count + 1)
+        local mark = op == "+" and "'>" or "'<"
+        vim.api.nvim_feedkeys(vim.keycode(":move" .. mark .. op .. times .. "<Cr>gv=gv"), "n", true)
+
+        restore_autocmd()
+    end
+end
+
 --Move Line
-map("n", "<A-j>", u.move_line("+"), { silent = true })
-map("n", "<A-k>", u.move_line("-"), { silent = true })
+map("n", "<A-j>", move_line('+'), { silent = true })
+map("n", "<A-k>", move_line('-'), { silent = true })
+map("x", "<A-j>", move_selected('+'), { silent = true })
+map("x", "<A-k>", move_selected('-'), { silent = true })
 
 --Surround
 map("v", "<leader>sa", cb("modules.surround", "add_visual"))
@@ -110,6 +138,7 @@ map("n", "<leader>d", ":Trouble<CR>", { silent = true })
 -- ##################################################
 -- ####			  GIT keybindings	             ####
 -- ##################################################
+
 map({ "n", "v" }, "<leader>gl", function()
     local mode = string.lower(vim.fn.mode())
     require("gitlinker").get_buf_range_url(mode)

@@ -6,7 +6,6 @@
 }: let
   terminal = config.home.sessionVariables.TERMINAL;
   screenshotarea = "grimblast --notify --freeze copy area";
-  lock = "swaylock -S --effect-blur 10x10";
   cliphist = "cliphist list | rofi -dmenu | cliphist decode | wl-copy";
   launcher = "rofi -show";
 

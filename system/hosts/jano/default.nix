@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  user,
-  ...
-}: {
+{...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules

@@ -19,6 +19,11 @@ return {
                     color = mocha.sky,
                     name = "C",
                 },
+                v = {
+                    icon = "",
+                    color = mocha.blue,
+                    name = "V"
+                },
                 ["cmakelists.txt"] = {
                     icon = " ",
                     color = mocha.sapphire,

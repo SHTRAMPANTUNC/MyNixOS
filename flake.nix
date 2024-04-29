@@ -35,6 +35,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -50,7 +55,6 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = [system];
       flake = {
-
         nixosConfigurations = {
           jano = helpers.mkHost {
             hostname = "jano";
@@ -63,7 +67,7 @@
         };
 
         devShells.x86_64-linux.default = pkgs.mkShell {
-          packages = with pkgs; [ alejandra nil deadnix ];
+          packages = with pkgs; [alejandra nil deadnix sops age];
           name = "ღვინო";
           meta.description = "The default development shell for this flake";
 

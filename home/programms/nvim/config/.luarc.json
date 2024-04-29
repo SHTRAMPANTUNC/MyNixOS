@@ -9,6 +9,7 @@
         "redefined-local",
         "unused-local",
         "cast-local-type",
-        "unused-function"
+        "unused-function",
+        "inject-field"
     ]
 }
