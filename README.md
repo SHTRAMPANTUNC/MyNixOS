@@ -19,7 +19,7 @@
  - Bar - [**`Waybar`**](https://github.com/Alexays/Waybar)
  - Terminal - [**`Foot`**](https://codeberg.org/dnkl/foot)
  - Shell - [**`Fish`**](https://fishshell.com/)
- - Promt - [**`Statship`**](https://starship.rs/)
+ - Promt - [**`Starship`**](https://starship.rs/)
 
 </br>
 
