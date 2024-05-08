@@ -1,6 +1,6 @@
 {...}: {
   # nh default flake
-  environment.variables.FLAKE = "/home/kuper/MyFlake";
+  environment.variables.FLAKE = "/home/kuper/MyNixOS";
 
   programs.nh = {
     enable = true;
