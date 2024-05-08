@@ -1,0 +1,17 @@
+{
+    "workspace.checkThirdParty": false,
+    "diagnostics.globals": [
+        "return",
+        "vim",
+        "fasle",
+        "border",
+        "cmp_border"
+    ],
+    "diagnostics.disable": [
+        "redefined-local",
+        "unused-local",
+        "cast-local-type",
+        "unused-function",
+        "inject-field"
+    ]
+}
