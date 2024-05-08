@@ -2,7 +2,7 @@
   imports = [
     ./xdg.nix
     ./hypr.nix
-    # ./sops.nix
+    ./sops.nix
     ./steam.nix
     ./dconf.nix
     ./console.nix

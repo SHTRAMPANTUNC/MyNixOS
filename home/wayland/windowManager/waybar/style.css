@@ -1,0 +1,199 @@
+@define-color background rgba(17, 17, 27, 0.85);
+@define-color background-alt rgba(137, 180, 250, 0.05);
+@define-color background-focus rgba(255, 255, 255, 0.1);
+@define-color border rgba(205, 214, 244, 0.2);
+@define-color red rgb( 243, 139, 168);
+@define-color orange rgb( 250, 179, 135);
+@define-color yellow rgb( 249, 226, 175 );
+@define-color green rgb( 166, 227, 161 );
+@define-color blue rgb( 137, 180, 250 );
+@define-color gray rgb( 108, 112, 134 );
+@define-color black rgb( 49, 50, 68 );
+@define-color white rgb( 205, 214, 244 );
+
+* {
+  all: unset;
+  font:
+    15pt "JetBrains Mono Nerd Font"
+}
+
+/* Button */
+button {
+  box-shadow: inset 0 -0.25rem transparent;
+  border: none;
+}
+
+button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+/* Tooltip */
+tooltip {
+  background: @background;
+  color: @white;
+  border: 1px solid @border;
+  border-radius: 5px;
+}
+
+tooltip label {
+  margin: 0.5rem;
+}
+
+/*  Waybar window */
+window#waybar {
+  background: @background;
+}
+
+/* Left Modules */
+.modules-left {
+  padding-left: 0.5rem;
+}
+
+/* Right Modules */
+.modules-right {
+  padding-right: 0.5rem;
+}
+
+/* Modules */
+#tray,
+#language,
+#pulseaudio,
+#custom-notification,
+#clock {
+  color: @white;
+  background: @background-alt;
+  border: 1px solid @border;
+  border-radius: 5px;
+  margin: 0.7rem 0.35rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem ; 
+}
+
+
+#custom-nixlogo {
+  color: @white;
+  background: @background-alt;
+  border: 1px solid @border;
+  border-radius: 5px;
+  margin: 0.7rem 0.35rem;
+  padding: 0.4rem 0.45rem 0.4rem 0.7rem ;
+}
+ 
+#workspaces button {
+  background: @background-alt;
+  color: @white;
+  border: 1px solid @border;
+  border-radius: 3px;
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+  margin-right: 0.8rem;
+  margin: 0.7rem 0.35rem;
+  transition: 200ms linear;
+}
+
+#workspaces button:last-child {
+  margin-right: 0;
+}
+
+#workspaces button:hover {
+  background: lighter(@white);
+  color: @black;
+}
+
+#workspaces button.empty {
+  background: @background;
+  border: 1px solid @border;
+  color: @white;
+}
+
+#workspaces button.empty:hover {
+  background: lighter(@gray);
+  color: @white;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  color: @white;
+}
+
+#workspaces button.urgent:hover {
+  background: lighter(@red);
+  color: @white;
+}
+
+#workspaces button.special {
+  background: @yellow;
+  color: @white;
+}
+
+#workspaces button.special:hover {
+  background: lighter(@yellow);
+}
+
+#workspaces button.active {
+  background: @blue;
+  color: @black;
+}
+
+#workspaces button.active:hover {
+  background: lighter(@blue);
+  color: @black;
+}
+
+/* Systray */
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background: @red;
+}
+
+menu {
+  background: @background;
+  border: 1px solid @border;
+  border-radius: 8px;
+}
+
+menu separator {
+  background: @border;
+}
+
+menu menuitem {
+  background: transparent;
+  padding: 0.5rem;
+  transition: 200ms;
+}
+
+menu menuitem:hover {
+  background: @background-focus;
+}
+
+menu menuitem:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+menu menuitem:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+menu menuitem:only-child {
+  border-radius: 8px;
+}
+
+/* Notification */
+#custom-notification {
+  color: @white;
+}
+
+#pulseaudio-slider highlight {
+  background: @white;
+  border: 1px solid @border;
+}
+
+/* Keyframes */
+@keyframes blink {
+  to {
+    color: @white;
+  }
+}

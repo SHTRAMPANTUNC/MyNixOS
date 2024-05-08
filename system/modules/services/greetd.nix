@@ -6,19 +6,17 @@
   ...
 }: {
   security.pam.services.greetd = {enableGnomeKeyring = true;};
-  services.greetd = {
+  services.greetd = let
+    session = {
+      command = "${lib.getExe inputs.hyprland.packages.${pkgs.system}.hyprland}";
+      user = user;
+    };
+  in {
     enable = true;
     settings = {
-      default_session = {
-        command = builtins.concatStringsSep " " [
-          "${pkgs.greetd.tuigreet}/bin/tuigreet"
-          "--asterisks"
-          "--remember"
-          "--time"
-          "--cmd ${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland"
-        ];
-        user = user;
-      };
+      terminal.vt = 1;
+      default_session = session;
+      initial_session = session;
     };
   };
 }

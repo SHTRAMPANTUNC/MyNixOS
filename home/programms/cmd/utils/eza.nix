@@ -1,0 +1,3 @@
+{...}: {
+  programs.eza = {enable = true;};
+}
