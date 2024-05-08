@@ -3,13 +3,13 @@
   config,
   ...
 }: {
-  import = [ ./cursor.nix ];
+  imports = [ ./cursor.nix ];
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Compact-Green-Dark";
+      name = "Catppuccin-Mocha-Compact-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = ["green"];
+        accents = ["blue"];
         size = "compact";
         tweaks = ["rimless" "normal"];
         variant = "mocha";
